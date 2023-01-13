@@ -83,10 +83,10 @@ while running:
     character_y_pos += to_y*dt
     
     #가로 경계값 처리
-    if character_x_pos < character_width/2:
-        character_x_pos = character_width/2
-    elif character_x_pos > screen_width - character_width/2:
-        character_x_pos = screen_width - character_width/2
+    if character_x_pos < 0:
+        character_x_pos = 0
+    elif character_x_pos > screen_width - character_width:
+        character_x_pos = screen_width - character_width
     #세로 경계값 처리
     if character_y_pos <  + character_height:
         character_y_pos = + character_height
