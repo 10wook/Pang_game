@@ -40,6 +40,13 @@ enemy_y_pos = screen_height/2 -enemy_height/2
 enemy_speed = 0.6
 
 
+#폰트 정의 
+game_font = pygame.font.Font(None,40)
+
+#총시간
+total_time = 10
+#시작시간 정보
+start_ticks = pygame.time.get_ticks()
 
 
 
@@ -107,6 +114,28 @@ while running:
     screen.blit(character,(character_x_pos ,character_y_pos))
     #적 그리기
     screen.blit(enemy, (enemy_x_pos, enemy_y_pos))
+    
+    
+    #타이머 넣기
+    #경과 시간 계산
+    elapsed_time  = (pygame.time.get_ticks()- start_ticks)/1000 
+    #시간 경과 나타내기
+    #천으로 나누어서 초 단위로 표시함
+    
+    
+    #출력해주는 부분
+    #설정
+    timer = game_font.render(str(int(total_time - elapsed_time)),True,(255,255,255))
+    #보이기
+    screen.blit(timer,(10, 10))
+    
+    if total_time - elapsed_time <= 0:
+        time_over = game_font.render("TIME OVER!!",True,(0, 0, 0))
+        screen.blit(time_over,(screen_width/2 -70,screen_height/2))
+        #print("시간초과")
+     
+    if total_time - elapsed_time <= -2:   
+        running = False
     pygame.display.update()      
     
 
