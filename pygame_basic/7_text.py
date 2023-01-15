@@ -132,12 +132,17 @@ while running:
     if total_time - elapsed_time <= 0:
         time_over = game_font.render("TIME OVER!!",True,(0, 0, 0))
         screen.blit(time_over,(screen_width/2 -70,screen_height/2))
-        #print("시간초과")
-     
-    if total_time - elapsed_time <= -2:   
+        print("시간초과")
         running = False
+     
+    #if total_time - elapsed_time <= -2:   
+    #    running = False
+        
+        
     pygame.display.update()      
-    
+
+
+pygame.time.delay(2000)
 
 #게임이 종료 되면 종료
 pygame.quit()
