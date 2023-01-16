@@ -8,7 +8,7 @@ screen_height = 640
 screen = pygame.display.set_mode((screen_width,screen_height))
 
 #타이틀 설정
-pygame.display.set_caption("Nado Pang Game")
+pygame.display.set_caption("avoiding shitttt ")
 
 #FPS
 clock = pygame.time.Clock()
@@ -111,8 +111,13 @@ while running:
     enemy_rect.top = enemy_y_pos
     #캐릭터가 적이랑 충돌했냐?
     if character_rect.colliderect(enemy_rect):
+        hit_check = 1
+        hit_shit = game_font.render("Oh shit!!",True,(0, 0, 0))
+        screen.blit(hit_shit,(screen_width/2 -70,screen_height/2))
         print("똥에 맞았습니다 ㅋㅋ.")
         running = False
+    else :
+        hit_check = 0
     #배경 그리기            
     screen.blit(background, (0, 0)) 
     #screen.fill((0, 0, 255)) #혹은 배경 채우기
@@ -146,8 +151,7 @@ while running:
         
         
     pygame.display.update()      
-
-
+ 
 pygame.time.delay(2000) 
 
 #게임이 종료 되면 종료
