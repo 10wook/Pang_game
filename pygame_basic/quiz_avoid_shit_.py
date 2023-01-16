@@ -1,5 +1,5 @@
 import pygame
-
+import random
 pygame.init()#파이썬 초기회
  
 # 화면 크기 설정
@@ -36,7 +36,7 @@ enemy_size = enemy .get_rect().size
 enemy_width = enemy_size[0]
 enemy_height = enemy_size[1]
 enemy_x_pos = screen_width/2 - enemy_width/2
-enemy_y_pos = screen_height/2 -enemy_height/2
+enemy_y_pos = 0
 enemy_speed = 0.6
 
 
@@ -65,33 +65,39 @@ while running:
                 to_x += character_speed
             if event.key == pygame.K_LEFT:
                 to_x -= character_speed
-            if event.key == pygame.K_UP:
-                to_y -= character_speed
-            if event.key == pygame.K_DOWN:
-                to_y += character_speed
+            #if event.key == pygame.K_UP:
+            #    to_y -= character_speed
+            #if event.key == pygame.K_DOWN:
+            #    to_y += character_speed
         if event.type == pygame.KEYUP: #키에서 손을 떼면 이제 끝!
             if event.key == pygame.K_RIGHT:
                 to_x = 0 
             if event.key == pygame.K_LEFT:
                 to_x = 0
-            if event.key == pygame.K_UP:
-                to_y = 0
-            if event.key == pygame.K_DOWN:
-                to_y = 0
+            #if event.key == pygame.K_UP:
+            #    to_y = 0
+            #if event.key == pygame.K_DOWN:
+            #    to_y = 0
         
     character_x_pos += to_x*dt
-    character_y_pos += to_y*dt
-    
+    #character_y_pos += to_y*dt
+    if enemy_y_pos > screen_height - character_height:
+        enemy_x_pos = random.randint(0,screen_width - enemy_width)
+        enemy_y_pos = -enemy_height
+    else:
+        enemy_y_pos += 2
     #가로 경계값 처리
     if character_x_pos < 0:
         character_x_pos = 0
     elif character_x_pos > screen_width - character_width:
         character_x_pos = screen_width - character_width
     #세로 경계값 처리
-    if character_y_pos <   0:
-        character_y_pos =  0
-    elif character_y_pos > screen_height - character_height :
-        character_y_pos = screen_height - character_height
+    #if character_y_pos <  + character_height:
+    #    character_y_pos = + character_height
+    #elif character_y_pos > screen_height :
+    #    character_y_pos = screen_height 
+    ################################################################
+    # 장애물의 이동
         
     #충돌 처리
 
@@ -105,7 +111,7 @@ while running:
     enemy_rect.top = enemy_y_pos
     #캐릭터가 적이랑 충돌했냐?
     if character_rect.colliderect(enemy_rect):
-        print("충돌했습니다.")
+        print("똥에 맞았습니다 ㅋㅋ.")
         running = False
     #배경 그리기            
     screen.blit(background, (0, 0)) 
