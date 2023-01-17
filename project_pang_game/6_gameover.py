@@ -52,10 +52,10 @@ weapon_speed = 10
 
 #돌만들기 (4개 크기에 대해서 다르게 처리)
 stone_images = [
-    pygame.image.load(os.path.join(image_path, "stone1.png")),
-    pygame.image.load(os.path.join(image_path, "stone2.png")),
-    pygame.image.load(os.path.join(image_path, "stone3.png")),
-    pygame.image.load(os.path.join(image_path, "stone4.png"))]   
+    pygame.image.load(os.path.join(image_path, "stone1.png")).convert_alpha(),
+    pygame.image.load(os.path.join(image_path, "stone2.png")).convert_alpha(),
+    pygame.image.load(os.path.join(image_path, "stone3.png")).convert_alpha(),
+    pygame.image.load(os.path.join(image_path, "stone4.png")).convert_alpha()]   
 
 
 #돌크기에 따른 최초 스피드
