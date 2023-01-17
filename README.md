@@ -13,4 +13,13 @@ Prettycons Flat 의 로켓 그림을 사용하였습니다.
 
 
 실행 화면
+
+
+
+
 <img width="630" alt="스크린샷 2023-01-17 오전 10 11 43" src="https://user-images.githubusercontent.com/70461240/212790045-c9e7eaed-d0db-4a00-a22f-f3b4404e6dfa.png">
+
+
+
+방향키를 이용해서 좌우로 움직이며
+스페이스바르 이용해 무기를 발사합니다.
