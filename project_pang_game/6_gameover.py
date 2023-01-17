@@ -250,10 +250,14 @@ while running:
                                     "to_y": -6,#y축 이동 방향
                                     "init_spd_y": stone_speed_y[stone_img_idx+1]
                                     })
-                break
-            if weapon_to_remove > -1:
-                del weapons[weapon_to_remove]
-                weapon_to_remove = -1
+                    break
+        else:
+            continue
+                
+        break
+    if weapon_to_remove > -1:
+        del weapons[weapon_to_remove]
+        weapon_to_remove = -1
     #충돌된 공 혹은 무기 없애기
     if stone_to_remove > -1:
         del stones[stone_to_remove]
