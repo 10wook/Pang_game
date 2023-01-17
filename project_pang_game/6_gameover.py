@@ -37,7 +37,7 @@ character_width = character_size[0]
 character_height = character_size[1]
 character_x_pos = screen_width/2 - character_width/2
 character_y_pos = screen_height - character_height
-character_speed = 1
+character_speed = 0.6
 
 
 #무기 만들기
