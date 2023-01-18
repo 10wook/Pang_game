@@ -1,10 +1,7 @@
 
-
-
-
 import pygame
 import os 
-pygame.init()#파이썬 초기회
+pygame.init()#파이썬 초기화
  
 # 화면 크기 설정
 screen_width = 640
