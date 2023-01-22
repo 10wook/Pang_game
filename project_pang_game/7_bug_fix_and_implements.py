@@ -118,8 +118,7 @@ while running:
             
         
     character_x_pos += (to_x_left+to_x_right)*dt
-
-    
+    ##이 부분이 수정해서 버그 수정을 조금한 부분이다.
     #가로 경계값 처리
     if character_x_pos < 0:
         character_x_pos = 0
@@ -303,6 +302,9 @@ msg_rect = msg.get_rect(center = (int(screen_width/2),int(screen_height/2)))
 screen.blit(msg,msg_rect)
 pygame.display.update()
 pygame.time.delay(2000) 
+
+
+
 
 #게임이 종료 되면 종료
 pygame.quit()
